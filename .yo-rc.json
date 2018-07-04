@@ -22,7 +22,7 @@
     "enableSwaggerCodegen": false,
     "jwtSecretKey": "6f8022b6dc5d7f0b9ee909a605d37ab468c291f6",
     "clientFramework": "angularX",
-    "useSass": false,
+    "useSass": true,
     "clientPackageManager": "yarn",
     "testFrameworks": [],
     "jhiPrefix": "jhi",
