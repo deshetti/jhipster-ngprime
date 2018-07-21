@@ -3,7 +3,7 @@
     "promptValues": {
       "packageName": "com.factly.degaresearch"
     },
-    "jhipsterVersion": "5.0.1",
+    "jhipsterVersion": "5.1.0",
     "applicationType": "monolith",
     "baseName": "degaresearch",
     "packageName": "com.factly.degaresearch",

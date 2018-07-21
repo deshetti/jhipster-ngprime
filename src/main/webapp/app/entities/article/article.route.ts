@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpResponse } from '@angular/common/http';
 import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot, Routes } from '@angular/router';
 import { UserRouteAccessService } from 'app/core';
-import { Observable } from 'rxjs';
+import { of } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { Article } from 'app/shared/model/article.model';
 import { ArticleService } from './article.service';
 import { ArticleComponent } from './article.component';
@@ -18,9 +19,9 @@ export class ArticleResolve implements Resolve<IArticle> {
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
         const id = route.params['id'] ? route.params['id'] : null;
         if (id) {
-            return this.service.find(id).map((article: HttpResponse<Article>) => article.body);
+            return this.service.find(id).pipe(map((article: HttpResponse<Article>) => article.body));
         }
-        return Observable.of(new Article());
+        return of(new Article());
     }
 }
 
